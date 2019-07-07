@@ -1,0 +1,2 @@
+#/api/* http://foton-api-admin.apps.picsize.com.br/:splat 200!
+/*    /index.html   200

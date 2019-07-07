@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
   main: {
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(2),
+    height: '100%'
   },
   footer: {
     padding: 0,
