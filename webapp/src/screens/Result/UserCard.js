@@ -33,16 +33,16 @@ export default function ImgMediaCard() {
           <Typography gutterBottom variant="h5" component="h2">
           Ana Letícia Camargos
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="curso" color="textSecondary" component="p">
           Direito, UFMG
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="about" color="textSecondary" component="p">
             No meu carro não pode faltar
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="musica" color="textSecondary" component="p">
             No meu carro eu escuto
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="assunto" color="textSecondary" component="p">
             Conversamos sobre
           </Typography>
         </CardContent>
