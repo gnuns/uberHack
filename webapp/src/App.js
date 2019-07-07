@@ -37,8 +37,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#f7f7f7' || '#ffffff'
   },
   main: {
-    // marginTop: theme.spacing(8),
-    // marginBottom: theme.spacing(2),
+    marginTop: '50px',
+    marginBottom: theme.spacing(2),
   },
   footer: {
     padding: 0,
