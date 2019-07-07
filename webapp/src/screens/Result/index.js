@@ -83,7 +83,7 @@ export default function StickyFooter() {
       </Container>
       <footer className={classes.footer}>
       <Button variant="contained" color="primary" className={classes.button}>
-          Começar
+          Combinar Carona
         </Button>
       </footer>
     </div>
