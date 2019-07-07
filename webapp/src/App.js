@@ -1,35 +1,86 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
+import Divider from '@material-ui/core/Divider';
 
-const useStyles = makeStyles({
-  root: {
-    width: 500,
-  },
-});
-function App() {
+import CheckboxList from './CheckboxList'
 
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+// Usar para transições de tela:
+// https://material-ui.com/components/transitions/
 
+function MadeWithLove() {
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}
-    >
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-    </BottomNavigation>
+    <Typography variant="body2" color="textSecondary">
+      {'Built with love by the '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Material-UI
+      </Link>
+      {' team.'}
+    </Typography>
   );
 }
 
-export default App;
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    position: 'relative'
+  },
+  main: {
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(2),
+  },
+  footer: {
+    padding: 0,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    height: '56px'
+  },
+  button: {
+    margin: 0,
+    borderRadius: 0,
+    width: '100%',
+    height: '100%',
+  },
+  text: {
+    paddingBottom: '30px',
+    textAlign: 'center'
+  },
+  question: {
+    textAlign: 'center',
+    padding: '25px 0 0 0'
+  }
+}));
+
+export default function StickyFooter() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <Container component="main" className={classes.main} maxWidth="sm">
+        <Typography color="textSecondary" className={classes.text} variant="body2">
+        Antes de encontrar a sua carona, precisamos conhecer você:
+        </Typography>
+        
+        <Divider variant="fullWidth" />
+        <Typography color="textSecondary" className={classes.question} variant="body1">
+        1. Que tipo de múscia você gosta?
+        </Typography>
+        
+        <CheckboxList />
+      </Container>
+      <footer className={classes.footer}>
+      <Button variant="contained" color="primary" className={classes.button}>
+          Continuar
+        </Button>
+      </footer>
+    </div>
+  );
+}
