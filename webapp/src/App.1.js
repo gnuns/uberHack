@@ -6,10 +6,7 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
-import ReactSwipe from 'react-swipe';
 
-
-import UserCard from './UserCard'
 import CheckboxList from './CheckboxList'
 
 // Usar para transições de tela:
@@ -37,8 +34,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#f7f7f7' || '#ffffff'
   },
   main: {
-    // marginTop: theme.spacing(8),
-    // marginBottom: theme.spacing(2),
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(2),
   },
   footer: {
     padding: 0,
@@ -65,22 +62,21 @@ const useStyles = makeStyles(theme => ({
 
 export default function StickyFooter() {
   const classes = useStyles();
-  let reactSwipeEl;
+
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Container component="main" className={classes.main} maxWidth="sm">
-        <div>
-      <ReactSwipe
-        className="carousel"
-        swipeOptions={{ continuous: false,   widthOfSiblingSlidePreview: 50 }}
-        ref={el => (reactSwipeEl = el)}
-      >
-        <div style={{padding: '10px 5px', height: 'auto'}}><UserCard></UserCard></div>
-        <div style={{padding: '10px 5px', height: 'auto'}}><UserCard></UserCard></div>
-        <div style={{padding: '10px 5px', height: 'auto', display: 'block', float: 'right'}}><UserCard></UserCard></div>
-      </ReactSwipe>
-    </div>
+        <Typography color="textSecondary" className={classes.text} variant="body2">
+        Antes de encontrar a sua carona, precisamos conhecer você:
+        </Typography>
+        
+        <Divider variant="fullWidth" />
+        <Typography color="textSecondary" className={classes.question} variant="body1">
+        1. Que tipo de múscia você gosta?
+        </Typography>
+        
+        <CheckboxList />
       </Container>
       <footer className={classes.footer}>
       <Button variant="contained" color="primary" className={classes.button}>
