@@ -13,34 +13,24 @@ import CheckboxList from './CheckboxList'
 // https://voronianski.github.io/react-swipe/demo/?continuous=true
 // https://material-ui.com/components/transitions/
 
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary">
-      {'Built with love by the '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </Link>
-      {' team.'}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
+    height: '100vh',
+    width: '100vw',
     position: 'relative',
-    backgroundColor: '#f7f7f7' || '#ffffff'
+    backgroundColor: '#f7f7f7' || '#ffffff',
+    paddingBottom: '56px',
+    overflowX: 'hidden'
   },
   main: {
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(2),
-    height: '100%'
   },
   footer: {
     padding: 0,
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     width: '100%',
     height: '56px'

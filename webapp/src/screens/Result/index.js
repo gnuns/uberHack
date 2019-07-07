@@ -11,21 +11,6 @@ import ReactSwipe from 'react-swipe';
 
 import UserCard from './UserCard'
 
-// Usar para transições de tela:
-// https://voronianski.github.io/react-swipe/demo/?continuous=true
-// https://material-ui.com/components/transitions/
-
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary">
-      {'Built with love by the '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </Link>
-      {' team.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,7 +53,7 @@ export default function StickyFooter() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Container component="main" className={classes.main} maxWidth="sm">
+      <Container component="main" className={classes.main}>
         <div>
       <ReactSwipe
         className="carousel"
